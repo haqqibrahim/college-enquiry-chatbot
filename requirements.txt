@@ -1,0 +1,6 @@
+streamlit
+phidata
+duckduckgo-search
+groq
+openai
+exa_py
