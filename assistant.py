@@ -24,7 +24,7 @@ def ai(prompt, school):
         "Do not use this phrase 'According to the information yielded from the tool call'"
     ],
     tools=[DuckDuckGo(), ExaTools(api_key=exa_api_key)],
-    debug_mode=True,
+    debug_mode=False,
     )
     
     response = assistant.run(prompt, stream=False)
