@@ -4,3 +4,11 @@ duckduckgo-search
 groq
 openai
 exa_py
+PyMySQL
+SQLAlchemy
+pgvector
+psycopg2
+ollama
+pypdf
+nest_asyncio
+beautifulsoup4
