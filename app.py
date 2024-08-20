@@ -77,11 +77,11 @@ def main() -> None:
         st.session_state["messages"] = assistant_chat_history
     else:
         logger.debug("No chat history found")
-        st.session_state["messages"] = [{"role": "assistan", "content": "Welcome to Chrisland University Enquiry Chatbot..."}]
+        st.session_state["messages"] = [{"role": "assistant", "content": "Welcome to Chrisland University Enquiry Chatbot..."}]
 
     # Prompt for user input
     if prompt := st.chat_input():
-        st.session_state["messages"].append({"role": "use", "content": prompt})
+        st.session_state["messages"].append({"role": "user", "content": prompt})
 
     # Display existing chat messages
     for message in st.session_state["messages"]:
@@ -92,9 +92,9 @@ def main() -> None:
 
     # If last message is from a user, generate a new response
     last_message = st.session_state["messages"][-1]
-    if last_message.get("role") == "use":
+    if last_message.get("role") == "user":
         question = last_message["content"]
-        with st.chat_message("assistan"):
+        with st.chat_message("assistant"):
             resp_container = st.empty()
             # Streaming is not supported with function calling on Groq atm
             response = auto_rag_assistant.run(question, stream=False)
@@ -104,7 +104,7 @@ def main() -> None:
             # for delta in auto_rag_assistant.run(question):
             #     response += delta  # type: ignore
             #     resp_container.markdown(response)
-            st.session_state["messages"].append({"role": "assistan", "content": response})
+            st.session_state["messages"].append({"role": "assistant", "content": response})
 
     # Load knowledge base
     if auto_rag_assistant.knowledge_base:

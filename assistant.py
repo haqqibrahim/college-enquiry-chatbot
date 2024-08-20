@@ -13,7 +13,7 @@ from phi.embedder.fireworks import FireworksEmbedder
 groq_api_key = st.secrets["GROQ_API_KEY"]
 exa_api_key = st.secrets["EXA_API_KEY"]
 
-db_url = "postgresql://neondb_owner:w3U4elvxQPWX@ep-wandering-silence-a5dlwp0i.us-east-2.aws.neon.tech/neondb?sslmode=require"
+db_url = "postgresql://neondb_owner:gwiOVHQZ8qx1@ep-steep-cherry-a5tppkw8.us-east-2.aws.neon.tech/neondb?sslmode=require"
 fireworks_api = "0IEJPt022AsY5IsP5t8Hb8TAy5OZXYTyEMQn3aRATAD2Sysh"
 
 
